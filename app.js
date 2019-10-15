@@ -1,19 +1,26 @@
-// require Express
 const express = require('express');
-
-// home router
-const hr = require('./routers/hr');
-
-// create an instance of Express
 const app = express();
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+require('dotenv/config');
 
-// point to the static folder
-app.use(express.static('public'));
+// middleware
+app.use(bodyParser.json());
 
-// define that the app uses hr as the root URL
+// import Routes
+const hr = require('./routes/home');
+const br = require('./routes/bookings');
+
+// Routes
 app.use('/', hr);
+app.use('/bookings', br);
 
-// listen to the port
-app.listen(3000, () => {
-    console.log('server has started');
-})
+// connect to DB
+mongoose.connect(
+    process.env.DB_CONNECTION,
+    {useNewUrlParser: true, useUnifiedTopology: true}, () => {
+        console.log('Thanos connected to the DB');
+    } 
+);
+
+app.listen(3000);
