@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router(); 
+const router = express.Router();
 const Booking = require('../models/Booking');
 
 router.get('/', (req, res) => {
@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
 
     console.log(req.body);
-    
+
     const booking = new Booking({
         company: req.body.company,
         name: req.body.name,
