@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-require('dotenv/config');
+
+const ip = "localhost";
+const dbName = "takii";
 
 // middleware
 app.use(bodyParser.json());
@@ -15,12 +17,12 @@ const br = require('./routes/bookings');
 app.use('/', hr);
 app.use('/bookings', br);
 
-// connect to DB
-mongoose.connect(
-    process.env.DB_CONNECTION,
-    {useNewUrlParser: true, useUnifiedTopology: true}, () => {
-        console.log('Thanos connected to the DB');
-    } 
+// connect to DB by using promises
+mongoose.connect(`mongodb://${ip}:27017/${dbName}`, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+    console.log('Thanos connected to the DB');
+}, err => {
+    console.log('Thanos failed to snap his fingers - ' + err);
+}
 );
 
 app.listen(3000);
