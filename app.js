@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-const ip = "localhost";
+const ip = "10.40.200.62";
 const dbName = "takii";
 
 // middleware
