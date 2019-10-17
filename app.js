@@ -3,8 +3,8 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-const ip = "10.40.200.62";
-const dbName = "takii";
+const connectionString = "mongodb+srv://matthew:thanos123@cluster0-aerzu.azure.mongodb.net/test?retryWrites=true&w=majority";
+// const dbName = "takii";
 
 // middleware
 app.use(bodyParser.json());
@@ -18,7 +18,7 @@ app.use('/', hr);
 app.use('/bookings', br);
 
 // connect to DB by using promises
-mongoose.connect(`mongodb://${ip}:27017/${dbName}`, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
     console.log('Thanos connected to the DB');
 }, err => {
     console.log('Thanos failed to snap his fingers - ' + err);
