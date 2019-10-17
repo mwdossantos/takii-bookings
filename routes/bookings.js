@@ -6,19 +6,38 @@ router.get('/', (req, res) => {
     res.send("I am inevitable...")
 });
 
+// post to the database
 router.post('/', (req, res) => {
 
     console.log(req.body);
 
+    // create a new booking using the Booking Model
     const booking = new Booking({
         company: req.body.company,
         name: req.body.name,
         receipient: req.body.receipient,
-        location: req.body.location
+        location: req.body.location,
+        createdAtDate: req.body.createdAtDate,
     });
 
+    // define the options to format the time correctly
+    let options = {
+        hour12: false,
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric'
+    };
+
+    // create a converted date based on the booking's created on date
+    const formattedDate = booking.createdAtDate.toLocaleString('en-GB', options);
+
+    // save the booking to the DB
     booking.save()
         .then(data => {
+            console.log(formattedDate);
             res.json(data);
         })
         .catch(err => {

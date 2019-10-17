@@ -4,11 +4,11 @@ const BookingSchema = mongoose.Schema({
     company: String,
     name: String,
     receipient: String,
-    date: {
+    createdAtDate: {
         type: Date,
         default: Date.now
     },
-    location: String,
+    location: String, 
 });
 
 module.exports = mongoose.model('Booking', BookingSchema);
