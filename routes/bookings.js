@@ -9,8 +9,6 @@ router.get('/', (req, res) => {
 // post to the database
 router.post('/', (req, res) => {
 
-    console.log(req.body);
-
     // create a new booking using the Booking Model
     const booking = new Booking({
         company: req.body.company,
@@ -20,8 +18,10 @@ router.post('/', (req, res) => {
         createdAtDate: req.body.createdAtDate,
     });
 
+    console.log(booking);
+
     // define the options to format the time correctly
-    let options = {
+    let optionsNL = {
         hour12: false,
         weekday: 'long',
         year: 'numeric',
@@ -32,12 +32,11 @@ router.post('/', (req, res) => {
     };
 
     // create a converted date based on the booking's created on date
-    const formattedDate = booking.createdAtDate.toLocaleString('en-GB', options);
+    const formattedDate = booking.createdAtDate.toLocaleString('en-GB', optionsNL);
 
     // save the booking to the DB
     booking.save()
         .then(data => {
-            console.log(formattedDate);
             res.json(data);
         })
         .catch(err => {
