@@ -21,7 +21,7 @@ app.use('/bookings', br);
 mongoose.connect(conn, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
     console.log('Thanos connected to the DB and found peace');
 }, err => {
-    console.log('Thanos failed to snap his fingers - his head got chopped off by Thor ' + err);
+    console.log('Thanos failed to snap his fingers - his head got chopped off by Thor - ' + err);
 }
 );
 

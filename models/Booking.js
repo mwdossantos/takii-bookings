@@ -12,3 +12,10 @@ const BookingSchema = mongoose.Schema({
 });
 
 module.exports = mongoose.model('Booking', BookingSchema);
+
+// {
+// 	"company": "Snap B.V.",
+// 	"name": "Mr. Thanos",
+// 	"receipient": "The Avengers",
+//  "location": "The streets of America baby!"
+// }
