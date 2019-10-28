@@ -3,7 +3,6 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-// const conn = "mongodb+srv://matthew:thanos123@cluster0-aerzu.azure.mongodb.net/test?retryWrites=true&w=majority";
 const conn = "mongodb://10.40.200.62:27017/takii";
 
 // middleware
