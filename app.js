@@ -16,6 +16,9 @@ const br = require('./routes/bookings');
 app.use('/', hr);
 app.use('/bookings', br);
 
+// Public declaration
+app.use(express.static('public'));
+
 // connect to DB by using promises
 mongoose.connect(conn, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
     console.log('Thanos connected to the DB and found peace');
