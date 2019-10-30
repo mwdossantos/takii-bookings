@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloThanos logo="https://media.giphy.com/media/Mc7glzjN2Ukj4KGvCU/giphy.gif"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloThanos from './components/HelloThanos.vue'
 
+// export this template file along with its components
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloThanos
   }
 }
 </script>
@@ -25,4 +25,10 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.thanoshead {
+  border-radius: 20px;
+  box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.4);
+}
+
 </style>
