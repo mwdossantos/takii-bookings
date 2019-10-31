@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-const conn = "mongodb://10.40.200.236:27017/takii";
+const conn = "mongodb://10.40.200.62:27017/takii";
 
 // middleware
 app.use(bodyParser.json());
