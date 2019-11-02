@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <HelloThanos logo="https://media.giphy.com/media/Mc7glzjN2Ukj4KGvCU/giphy.gif"/>
+    <BookingsForm location="Location"/>
   </div>
 </template>
 
 <script>
-import HelloThanos from './components/HelloThanos.vue'
 
+import HelloThanos from './components/HelloThanos.vue';
+import BookingsForm from './components/BookingsForm.vue';
 // export this template file along with its components
 export default {
   name: 'app',
   components: {
-    HelloThanos
+    HelloThanos,
+    BookingsForm
   }
 }
 </script>

@@ -3,7 +3,6 @@
     <img class="thanoshead" :src="logo">
   </div>
 </template>
-
 <script>
 export default {
   name: 'HelloThanos',
