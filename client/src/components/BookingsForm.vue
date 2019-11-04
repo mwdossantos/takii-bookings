@@ -4,23 +4,17 @@
     <input type="text" v-model="company" class="form-control"><br>
     <label for="">Name</label><br>
     <input type="text" v-model="name" class="form-control"><br>
-
+    <label for="receipient">receipient</label><br>
+    <input type="text" v-model="receipient" class="form-control"><br>
+    <label for="location">Location</label><br>  
+    <input type="text" v-model="location" class="form-control"><br> 
     <button>Submit</button>
   </form>
 </template>
 <script>
 
 const axios = require('axios').default;
-  axios.post('/user', {
-    company: 'Fred',
-    name: 'Flintstone'
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+
 
 
 export default {
@@ -28,7 +22,9 @@ export default {
   data(){
     return{
       company: "",
-      name: ''
+      name: '',
+      receipient: '',
+      location: '',
     };
   },
 
@@ -38,7 +34,9 @@ export default {
       let currentObj = this;
       axios.post('http://localhost:5000/bookings', {
         company: this.company,
-        name: this.name
+        name: this.name,
+        receipient: this.receipient,
+        location: this.location
       })
       .then(function (response) {
         currentObj.output = response.data;
