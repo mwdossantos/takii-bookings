@@ -2,11 +2,13 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
-const conn = "mongodb://10.40.200.62:27017/takii";
+const conn = "mongodb://localhosts:27017/takii";
 
 // middleware
 app.use(bodyParser.json());
+app.use(cors());
 
 // import Routes
 const hr = require('./routes/home');

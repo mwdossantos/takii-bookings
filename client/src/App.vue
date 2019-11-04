@@ -9,6 +9,7 @@
 
 import HelloThanos from './components/HelloThanos.vue';
 import BookingsForm from './components/BookingsForm.vue';
+
 // export this template file along with its components
 export default {
   name: 'app',
