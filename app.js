@@ -7,6 +7,7 @@ const firebase = require('firebase/app');
 require('firebase/auth');
 require('firebase/firestore');
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyCKn2v5fu91UUAbvDjb5SozEJp8ul3qT3M",
     authDomain: "takii-bookings.firebaseapp.com",
@@ -16,6 +17,7 @@ const firebaseConfig = {
     messagingSenderId: "71332415783",
     appId: "1:71332415783:web:a40f8b15b5ce12aef18102"
 };
+
 
 firebase.initializeApp(firebaseConfig);
 
