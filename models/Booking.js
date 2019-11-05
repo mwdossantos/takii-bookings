@@ -1,4 +1,4 @@
-// 
+//
 
 // const BookingSchema = mongoose.Schema({
     // company: String,
