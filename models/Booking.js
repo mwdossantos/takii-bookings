@@ -1,17 +1,17 @@
-const mongoose = require('mongoose');
+//
 
-const BookingSchema = mongoose.Schema({
-    company: String,
-    name: String,
-    receipient: String,
-    createdAtDate: {
-        type: Date,
-        default: Date.now
-    },
-    location: String, 
-});
+// const BookingSchema = mongoose.Schema({
+    // company: String,
+    // name: String,   
+    // receipient: String,
+    // createdAtDate: {
+        // type: Date,
+        // default: Date.now
+    // },
+    // location: String, 
+// });
 
-module.exports = mongoose.model('Booking', BookingSchema);
+// module.exports = mongoose.model('Booking', BookingSchema);
 
 // {
 // 	"company": "Snap B.V.",
