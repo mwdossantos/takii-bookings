@@ -1,5 +1,6 @@
 <template>
   <form @submit="formSubmit">
+    <h3>Takii Bookings</h3>
     <label for="">Company</label><br>
     <input type="text" v-model="company" class="form-control"><br>
     <label for="">Name</label><br>

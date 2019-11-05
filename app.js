@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const conn = "mongodb://localhosts:27017/takii";
+const conn = "mongodb://localhost:27017/takii";
 
 // middleware
 app.use(bodyParser.json());
@@ -13,10 +13,12 @@ app.use(cors());
 // import Routes
 const hr = require('./routes/home');
 const br = require('./routes/bookings');
+const gbr = require('./routes/getBookings');
 
 // Routes
 app.use('/', hr);
 app.use('/bookings', br);
+app.use('/get',gbr)
 
 // Public declaration
 app.use(express.static('public'));
