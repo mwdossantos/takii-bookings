@@ -26,9 +26,11 @@ app.post('/', (req, res) => {
     db.collection("users").add({
         first: "Matthew",
         last: "Wilson",
-        born: 1997
+        born: 1997,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
     })
         .then(function (docRef) {
+            console.log(docRef.timestamp);
             console.log("Document written with ID: ", docRef.id);
         })
         .catch(function (error) {
