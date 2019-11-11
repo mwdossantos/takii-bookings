@@ -30,11 +30,11 @@
       <h4>Location</h4>
       <p>{{ location }}</p>
     </article>
+    <button v-on:click="getShit">oh shit</button>
   </div>
 </template>
 <script>
 const axios = require("axios").default;
-
 export default {
   name: "BookingsForm",
   data() {
@@ -63,6 +63,18 @@ export default {
         .catch(function(error) {
           currentObj.output = error;
         });
+    },
+    getShit(e) {
+      e.preventDefault();
+      axios
+        .get("http://localhost:5000/get")
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(function(error) {
+          this.output = error;
+        })
+        .finally(() => {});
     }
   }
 };

@@ -17,7 +17,7 @@ function getBookings() {
 
             snapshot.forEach(doc => {
                 console.log(doc.data());
-                return doc.data();
+                return
             });
         })
         .catch(err => {
@@ -25,7 +25,7 @@ function getBookings() {
         });
 }
 router.get('/', (req, res) => {
-    res.send('destiny arrives' + JSON.stringify(getBookings()));
+    res.send('destiny arrives ' + getBookings(doc.data()));
 });
-
+// jew
 module.exports = router;
