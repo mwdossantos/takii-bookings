@@ -31,5 +31,5 @@ router.get('/', (req, res) => {
         res.send(bookings);
     })
 });
-// jew
+
 module.exports = router;
