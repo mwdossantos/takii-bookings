@@ -2,3 +2,4 @@
 require('./vanite')
 require('./tools')
 require('./main')
+require('./animation')

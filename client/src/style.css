@@ -1,0 +1,26 @@
+.page {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0px 20px 60px 20px;
+}
+
+.bg-light {
+    background-color: transparent!important;
+}
+
+.js-preview {
+    margin-top: 20px;
+}
+
+nav {
+    margin-bottom: 40px;
+    padding: 20px 0px 0px 0px!important;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+body {
+    background-color: #f1f1f1;
+}

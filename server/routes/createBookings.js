@@ -18,6 +18,7 @@ router.post('/', (req, res) => {
         date: req.body.date,
         receipient: req.body.recipient,
         location: req.body.location,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
     }), err = () => {
         console.log(err);
     };

@@ -65,5 +65,6 @@ export default class SaveButton extends Component {
     callback(response) {
         console.log(response);
         store.state['saveState'] = "inactive";
+        $('#exampleModal').modal('show')
     }
 }
