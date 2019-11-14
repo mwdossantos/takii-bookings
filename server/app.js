@@ -27,13 +27,13 @@ app.use(cors());
 
 // import Routes
 const hr = require('./routes/home');
-const br = require('./routes/bookings');
+const cbr = require('./routes/createBookings');
 const gbr = require('./routes/getBookings');
 
 // Routes
 app.use('/', hr);
-app.use('/bookings', br);
-app.use('/get', gbr)
+app.use('/createBookings', cbr);
+app.use('/getBookings', gbr)
 
 // Public declaration
 app.use(express.static('public'));
