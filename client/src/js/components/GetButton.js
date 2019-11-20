@@ -15,8 +15,6 @@ export default class GetButton extends Component {
             });
 
         this.element.addEventListener('click', () => {
-            console.log("lololol");
-
             this.get();
         })
     }
@@ -43,8 +41,14 @@ export default class GetButton extends Component {
     }
 
     callback(response) {
-        console.log(response);
         store.state['getState'] = "inactive";
+
+        //document.querySelector('#data').innerHTML = JSON.stringify(response);
+        console.log(response);
+
+        obj = JSON.parse(response);
+        console.log(obj.company);
+
         $('#exampleModal').modal('show')
     }
 }

@@ -34,9 +34,12 @@ export class GetRequest {
         this.url = url;
         this.data = data;
         this.callback = callback;
+        this.get()
     }
 
     get() {
+        let expReq = this;
+
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -45,6 +48,7 @@ export class GetRequest {
             }
         };
         xhttp.open("GET", this.url, true);
+        xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.send(JSON.stringify(this.data));
     }
 

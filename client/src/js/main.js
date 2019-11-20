@@ -2,13 +2,21 @@ import TextField from './components/TextField';
 import SaveButton from './components/SaveButton';
 import GetButton from './components/GetButton';
 
-// Create the Button instance
-// const textFields = [
-//     new TextField('Company'),
-//     new TextField('Recipient'),
-//     new TextField('Date'),
-//     new TextField('Location')
-// ];
+// Load in components per page
 
-new GetButton();
-// new SaveButton();
+let sPath = window.location.pathname;
+let sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+
+if (sPage == "index.html") {
+    const textFields = [
+        new TextField('Company'),
+        new TextField('Recipient'),
+        new TextField('Date'),
+        new TextField('Location')
+    ];
+    new SaveButton();
+}
+
+else if (sPage == "get-bookings.html") {
+    new GetButton()
+}
