@@ -34,7 +34,6 @@ export class GetRequest {
         this.url = url;
         this.data = data;
         this.callback = callback;
-        this.send()
     }
 
     get() {

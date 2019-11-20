@@ -15,6 +15,7 @@ export default class GetButton extends Component {
             });
 
         this.element.addEventListener('click', () => {
+            console.log("lololol");
 
             this.get();
         })
