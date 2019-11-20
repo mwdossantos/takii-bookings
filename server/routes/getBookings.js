@@ -4,6 +4,7 @@ const firebase = require('firebase/app');
 require('firebase/auth');
 require('firebase/firestore');
 var db = firebase.firestore();
+var cors = require('cors')
 
 async function getBookings() {
     let snapshot = db.collection('bookings');

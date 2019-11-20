@@ -1,0 +1,21 @@
+body {
+    background-color: #f1f1f1;
+}
+
+.page {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0px 20px 60px 20px;
+}
+
+.bg-light {
+    background-color: transparent!important;
+}
+
+
+nav {
+    margin-bottom: 40px;
+    padding: 20px 0px 0px 0px!important;
+}
+
+
