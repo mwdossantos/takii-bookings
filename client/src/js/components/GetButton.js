@@ -43,11 +43,11 @@ export default class GetButton extends Component {
     callback(response) {
         store.state['getState'] = "inactive";
 
-        //document.querySelector('#data').innerHTML = JSON.stringify(response);
-        console.log(response);
+        let objects = [response];
 
-        obj = JSON.parse(response);
-        console.log(obj.company);
+        objects.forEach((booking, index, array) => {
+            console.log(index);
+        });
 
         $('#exampleModal').modal('show')
     }
