@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
     db.collection("bookings").add({
         company: req.body.company,
         date: req.body.date,
-        receipient: req.body.recipient,
+        recipient: req.body.recipient,
         location: req.body.location,
         createdAt: firebase.firestore.FieldValue.serverTimestamp()
     }), err = () => {
