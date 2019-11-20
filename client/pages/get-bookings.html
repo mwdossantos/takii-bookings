@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../src/style.css">
 </head>
 
 <body>
@@ -26,8 +26,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Your appointment was succesfully created, and a confirmation e-mail has been sent to all
-                    participants. View your appointment on <a href="">here</a>.
+                    Your appointments were succesfully fetched.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
@@ -59,22 +58,9 @@
                 </ul>
             </div>
         </nav>
-        <section id="jew">
-            <button onclick="loadXMLDoc()">jew</button>
-        </section>
+        <button class="js-getButton">Get data</button>
+        <div id="data"></div>
     </div>
-    <script>
-    function loadXMLDoc() {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("jew").innerHTML =
-            this.responseText;
-          }
-        };
-        xhttp.open("GET", "http:localhost:5000/bookings". true);
-        xhttp.send();
-      }</script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="../dist/bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

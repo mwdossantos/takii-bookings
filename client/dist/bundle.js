@@ -97,6 +97,18 @@ eval("ScrollReveal().reveal('nav', {\n    delay: 300,\n    origin: 'left',\n    
 
 /***/ }),
 
+/***/ "./src/js/components/GetButton.js":
+/*!****************************************!*\
+  !*** ./src/js/components/GetButton.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return GetButton; });\n/* harmony import */ var _vanite__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../vanite */ \"./src/js/vanite.js\");\n/* harmony import */ var _tools__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../tools */ \"./src/js/tools.js\");\n\n\n\nclass GetButton extends _vanite__WEBPACK_IMPORTED_MODULE_0__[\"Component\"] {\n    constructor() {\n        super({\n            store: _vanite__WEBPACK_IMPORTED_MODULE_0__[\"store\"],\n            element: document.querySelector(`.js-getButton`)\n        });\n\n        // Custom logic for our button\n        _vanite__WEBPACK_IMPORTED_MODULE_0__[\"store\"].setState(\n            {\n                getState: 'inactive'\n            });\n\n        this.element.addEventListener('click', () => {\n\n            this.get();\n        })\n    }\n\n    // Called every time the state updates\n    render() {\n        if (_vanite__WEBPACK_IMPORTED_MODULE_0__[\"store\"].state['getState'] == \"Getting data\") {\n            this.element.style.opacity = .5;\n            this.element.innerHTML = \"Getting data...\";\n        }\n        else {\n            this.element.style.opacity = 1;\n            this.element.innerHTML = \"Get data\";\n        }\n    }\n\n    get() {\n        _vanite__WEBPACK_IMPORTED_MODULE_0__[\"store\"].state['getState'] = \"Getting data\";\n        new _tools__WEBPACK_IMPORTED_MODULE_1__[\"GetRequest\"](\n            'http://localhost:5000/getBookings',\n            {},\n            this.callback\n        )\n    }\n\n    callback(response) {\n        console.log(response);\n        _vanite__WEBPACK_IMPORTED_MODULE_0__[\"store\"].state['getState'] = \"inactive\";\n        $('#exampleModal').modal('show')\n    }\n}\n\n//# sourceURL=webpack:///./src/js/components/GetButton.js?");
+
+/***/ }),
+
 /***/ "./src/js/components/SaveButton.js":
 /*!*****************************************!*\
   !*** ./src/js/components/SaveButton.js ***!
@@ -140,7 +152,7 @@ eval("// ONLY ADD REQUIRES\n__webpack_require__(/*! ./vanite */ \"./src/js/vanit
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_TextField__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/TextField */ \"./src/js/components/TextField.js\");\n/* harmony import */ var _components_SaveButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/SaveButton */ \"./src/js/components/SaveButton.js\");\n\n\n\n// Create the Button instance\nconst textFields = [\n    new _components_TextField__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Company'),\n    new _components_TextField__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Recipient'),\n    new _components_TextField__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Date'),\n    new _components_TextField__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Location')\n];\n\nnew _components_SaveButton__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\n\n//# sourceURL=webpack:///./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_TextField__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/TextField */ \"./src/js/components/TextField.js\");\n/* harmony import */ var _components_SaveButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/SaveButton */ \"./src/js/components/SaveButton.js\");\n/* harmony import */ var _components_GetButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/GetButton */ \"./src/js/components/GetButton.js\");\n\n\n\n\n// Create the Button instance\nconst textFields = [\n    new _components_TextField__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Company'),\n    new _components_TextField__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Recipient'),\n    new _components_TextField__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Date'),\n    new _components_TextField__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Location')\n];\n\nnew _components_GetButton__WEBPACK_IMPORTED_MODULE_2__[\"default\"]();\nnew _components_SaveButton__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\n\n\n//# sourceURL=webpack:///./src/js/main.js?");
 
 /***/ }),
 
@@ -148,11 +160,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com
 /*!*************************!*\
   !*** ./src/js/tools.js ***!
   \*************************/
-/*! exports provided: WebRequest */
+/*! exports provided: WebRequest, GetRequest */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"WebRequest\", function() { return WebRequest; });\nclass WebRequest {\n    constructor(url, data, callback, files = []) {\n        this.url = url;\n        this.data = data;\n        this.callback = callback;\n        this.files = files;\n        this.send()\n    }\n\n    send() {\n        var expReq = this;\n\n        var xhttp = new XMLHttpRequest();\n\n        xhttp.onreadystatechange = function () {\n            if (typeof this.responseText == 'undefined') return false;\n\n            if (this.readyState == 4 && this.status == 200) {\n                var response = JSON.parse(this.responseText);\n                expReq.callback(response);\n            }\n\n        };\n\n        xhttp.open(\"POST\", this.url, true);\n        xhttp.setRequestHeader(\"Content-Type\", \"application/json\");\n        xhttp.send(JSON.stringify(this.data));\n    }\n}\n\n//# sourceURL=webpack:///./src/js/tools.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"WebRequest\", function() { return WebRequest; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"GetRequest\", function() { return GetRequest; });\nclass WebRequest {\n    constructor(url, data, callback, files = []) {\n        this.url = url;\n        this.data = data;\n        this.callback = callback;\n        this.files = files;\n        this.send()\n    }\n\n    send() {\n        var expReq = this;\n\n        var xhttp = new XMLHttpRequest();\n\n        xhttp.onreadystatechange = function () {\n            if (typeof this.responseText == 'undefined') return false;\n\n            if (this.readyState == 4 && this.status == 200) {\n                var response = JSON.parse(this.responseText);\n                expReq.callback(response);\n            }\n\n        };\n\n        xhttp.open(\"POST\", this.url, true);\n        xhttp.setRequestHeader(\"Content-Type\", \"application/json\");\n        xhttp.send(JSON.stringify(this.data));\n    }\n}\n\nclass GetRequest {\n\n    constructor(url, data, callback = []) {\n        this.url = url;\n        this.data = data;\n        this.callback = callback;\n        this.send()\n    }\n\n    get() {\n        let xhttp = new XMLHttpRequest();\n        xhttp.onreadystatechange = function () {\n            if (this.readyState == 4 && this.status == 200) {\n                let response = JSON.parse(this.responseText);\n                expReq.callback(response);\n            }\n        };\n        xhttp.open(\"GET\", this.url, true);\n        xhttp.send(JSON.stringify(this.data));\n    }\n\n}\n\n//# sourceURL=webpack:///./src/js/tools.js?");
 
 /***/ }),
 

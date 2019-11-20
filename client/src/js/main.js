@@ -1,5 +1,6 @@
 import TextField from './components/TextField';
 import SaveButton from './components/SaveButton';
+import GetButton from './components/GetButton';
 
 // Create the Button instance
 const textFields = [
@@ -9,4 +10,5 @@ const textFields = [
     new TextField('Location')
 ];
 
+new GetButton();
 new SaveButton();

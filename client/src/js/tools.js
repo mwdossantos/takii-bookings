@@ -27,3 +27,26 @@ export class WebRequest {
         xhttp.send(JSON.stringify(this.data));
     }
 }
+
+export class GetRequest {
+
+    constructor(url, data, callback = []) {
+        this.url = url;
+        this.data = data;
+        this.callback = callback;
+        this.send()
+    }
+
+    get() {
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                let response = JSON.parse(this.responseText);
+                expReq.callback(response);
+            }
+        };
+        xhttp.open("GET", this.url, true);
+        xhttp.send(JSON.stringify(this.data));
+    }
+
+}
