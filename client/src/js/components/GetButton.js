@@ -56,10 +56,10 @@ export default class GetButton extends Component {
                 <p class="card-text">See a preview of your appointment.</p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item company">${booking.company}</li>
-                <li class="list-group-item recipient">${booking.recipient}</li>
-                <li class="list-group-item date">${booking.date}</li>
-                <li class="list-group-item location">${booking.location}</li>
+                <li class="list-group-item company"><h5 class="label">Company:</h5>${booking.company}</li>
+                <li class="list-group-item recipient"><h5 class="label">Recipient:</h5>${booking.recipient}</li>
+                <li class="list-group-item date"><h5 class="label">Date:</h5>${booking.date}</li>
+                <li class="list-group-item location"><h5 class="label">Location</h5>${booking.location}</li>
             </ul>`;
             document.querySelector('.page').appendChild(bookingCard);
 
