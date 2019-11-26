@@ -25,7 +25,7 @@ export default class GetButton extends Component {
     get() {
         store.state['getState'] = "Getting data";
         new GetRequest(
-            'http://localhost:5000/getBookings',
+            'http://rushtothemax.gq:5000/getBookings',
             {},
             this.callback
         )
