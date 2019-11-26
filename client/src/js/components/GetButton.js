@@ -5,7 +5,7 @@ export default class GetButton extends Component {
     constructor() {
         super({
             store,
-            element: document.querySelector(`.js-getButton`)
+            // element: document.querySelector(`.js-getButton`)
         });
 
         // Custom logic for our button
@@ -14,22 +14,13 @@ export default class GetButton extends Component {
                 getState: 'inactive'
             });
 
-        this.element.addEventListener('click', () => {
-            this.get();
-        })
+        // this.element.addEventListener('click', () => {
+        //     this.get();
+        // })
+        window.onload = this.get();
     }
 
     // Called every time the state updates
-    render() {
-        if (store.state['getState'] == "Getting data") {
-            this.element.style.opacity = .5;
-            this.element.innerHTML = "Getting data...";
-        }
-        else {
-            this.element.style.opacity = 1;
-            this.element.innerHTML = "Get data";
-        }
-    }
 
     get() {
         store.state['getState'] = "Getting data";
@@ -62,8 +53,6 @@ export default class GetButton extends Component {
                 <li class="list-group-item location"><h5 class="label">Location</h5>${booking.location}</li>
             </ul>`;
             document.querySelector('.page').appendChild(bookingCard);
-
-            $('#exampleModal').modal('show');
         });
     }
 }
