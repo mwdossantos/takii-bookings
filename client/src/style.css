@@ -9,7 +9,6 @@
 }
 
 .js-preview {
-    margin-top: 20px;
 }
 
 nav {
@@ -27,4 +26,12 @@ body {
 
 .label{
     font-size: 1rem;
+}
+
+#data {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
 }

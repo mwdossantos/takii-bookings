@@ -37,7 +37,6 @@ export default class GetButton extends Component {
         let objects = response;
         objects.forEach(booking => {
             // create card
-
             const bookingCard = document.createElement('div');
             bookingCard.setAttribute('class', 'card js-preview');
             bookingCard.innerHTML = `<img src="http://1.bp.blogspot.com/-7XiSNsI7Zhc/XL3HYJjFmDI/AAAAAAACt9E/Yzd_cNd6h7IBQcnL4H8R7hHOQXXM_qX6QCK4BGAYYCw/s1600/girassol.gif"
@@ -52,7 +51,8 @@ export default class GetButton extends Component {
                 <li class="list-group-item date"><h5 class="label">Date:</h5>${booking.date}</li>
                 <li class="list-group-item location"><h5 class="label">Location</h5>${booking.location}</li>
             </ul>`;
-            document.querySelector('.page').appendChild(bookingCard);
+            document.querySelector('#data').appendChild(bookingCard);
+
         });
     }
 }

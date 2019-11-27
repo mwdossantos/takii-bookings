@@ -18,7 +18,7 @@ export default class TextField extends Component {
 
         this.element.addEventListener('keyup', () => {
             store.state[`value${this.name}`] = this.element.value;
-        })
+        });
     }
 
     // Called every time the state updates
