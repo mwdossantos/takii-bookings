@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Takii Bookings</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -26,8 +26,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Your appointment was succesfully created, and a confirmation e-mail has been sent to all
-                    participants. View your appointment on <a href="">here</a>.
+                    Your appointments were succesfully fetched.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
@@ -47,11 +46,11 @@
 
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./pages/get-bookings.html">Bookings</a>
+                        <a class="nav-link active" href="index.html">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="pages/post-bookings.html">Bookings </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -59,68 +58,7 @@
                 </ul>
             </div>
         </nav>
-
-        <h1>Make a booking.</h1>
-
-        <div class="card">
-            <div class="card-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Company</span>
-                    </div>
-                    <input type="text" class="form-control js-inputCompany" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-default">
-                </div>
-
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Recipient</span>
-                    </div>
-                    <input type="text" class="form-control js-inputRecipient" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-default">
-                </div>
-
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Date</span>
-                    </div>
-                    <input type="date" class="form-control js-inputDate" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-default">
-                </div>
-
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Room</span>
-                    </div>
-                    <input type="text" list="rooms" class="form-control js-inputLocation"
-                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                    <datalist id='rooms'>
-                        <option value="viola"></option>
-                        <option value="lisianthus"></option>
-                        <option value="van gogh"></option>
-                        <option value="helianthus"></option>
-                    </datalist>
-                </div>
-            </div>
-        </div>
-
-        <div class="card js-preview">
-            <img src="http://1.bp.blogspot.com/-7XiSNsI7Zhc/XL3HYJjFmDI/AAAAAAACt9E/Yzd_cNd6h7IBQcnL4H8R7hHOQXXM_qX6QCK4BGAYYCw/s1600/girassol.gif"
-                class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title">Your appointment</h5>
-                <p class="card-text">See a preview of your appointment.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item js-CompanyPreview"></li>
-                <li class="list-group-item js-RecipientPreview"></li>
-                <li class="list-group-item js-DatePreview"></li>
-                <li class="list-group-item js-LocationPreview"></li>
-            </ul>
-            <div class="card-body">
-                <button type="button" class="btn btn-warning js-saveButton">Save</button>
-            </div>
-        </div>
+        <div id="data"></div>
     </div>
 
     <script src="https://unpkg.com/scrollreveal"></script>

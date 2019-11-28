@@ -7,7 +7,7 @@ import GetButton from './components/GetButton';
 let sPath = window.location.pathname;
 let sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
 
-if (sPage == "index.html") {
+if (sPage == "post-bookings.html") {
     const textFields = [
         new TextField('Company'),
         new TextField('Recipient'),
@@ -17,6 +17,6 @@ if (sPage == "index.html") {
     new SaveButton();
 }
 
-else if (sPage == "get-bookings.html") {
+else if (sPage == "index.html") {
     new GetButton()
 }
