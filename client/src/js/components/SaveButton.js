@@ -49,7 +49,7 @@ export default class SaveButton extends Component {
         if (allgood) {
             store.state['saveState'] = "saving";
             new WebRequest(
-                'http://rushtothemax.gq:3000/createBookings',
+                'http://rushtothemax.gq:69/createBookings',
                 {
                     company: store.state['valueCompany'],
                     date: store.state['valueDate'],
