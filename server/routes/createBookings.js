@@ -15,6 +15,7 @@ router.post('/', (req, res) => {
     // create a new booking using the Booking Model
     db.collection("bookings").add({
         company: req.body.company,
+        name: req.body.name,
         date: req.body.date,
         time: req.body.time,
         recipient: req.body.recipient,
