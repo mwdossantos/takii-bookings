@@ -47,7 +47,6 @@ export default class GetButton extends Component {
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item company"><h5 class="label">Company:</h5>${booking.company}</li>
-                <li class="list-group-item company"><h5 class="label">name:</h5>${booking.name}</li>
                 <li class="list-group-item recipient"><h5 class="label">Recipient:</h5>${booking.recipient}</li>
                 <li class="list-group-item date"><h5 class="label">Date:</h5>${booking.date}</li>
                 <li class="list-group-item date"><h5 class="label">Time:</h5>${booking.time}</li>

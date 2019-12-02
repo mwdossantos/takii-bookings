@@ -10,7 +10,7 @@ let sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
 if (sPage == "post-bookings.html") {
     const textFields = [
         new TextField('Company'),
-        new TextFields('Name'),
+        // new TextFields('Name'),
         // new TextFields('Amount'),
         new TextField('Recipient'),
         new TextField('Date'),
