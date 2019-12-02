@@ -34,8 +34,8 @@ export default class SaveButton extends Component {
     save() {
         const fields = [
             'valueCompany',
-            'valueName',
-            'valueAmount',
+            // 'valueName',
+            // 'valueAmount',
             'valueDate',
             'valueTime',
             'valueRecipient',
@@ -55,8 +55,8 @@ export default class SaveButton extends Component {
                 'http://rushtothemax.gq:5000/createBookings',
                 {
                     company: store.state['valueCompany'],
-                    name: store.state['valueName'],
-                    amount: store.state['valueAmount'],
+                    // name: store.state['valueName'],
+                    // amount: store.state['valueAmount'],
                     date: store.state['valueDate'],
                     time: store.state['valueTime'],
                     recipient: store.state['valueRecipient'],
