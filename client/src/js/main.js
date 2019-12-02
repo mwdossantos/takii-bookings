@@ -12,6 +12,7 @@ if (sPage == "post-bookings.html") {
         new TextField('Company'),
         new TextField('Recipient'),
         new TextField('Date'),
+        new TextField('Time'),
         new TextField('Location')
     ];
     new SaveButton();
