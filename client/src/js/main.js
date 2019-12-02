@@ -11,7 +11,7 @@ if (sPage == "post-bookings.html") {
     const textFields = [
         new TextField('Company'),
         new TextFields('Name'),
-        new TextFields('Amount'),
+        // new TextFields('Amount'),
         new TextField('Recipient'),
         new TextField('Date'),
         new TextField('Time'),

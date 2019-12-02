@@ -35,7 +35,7 @@ export default class SaveButton extends Component {
         const fields = [
             'valueCompany',
             'valueName',
-            'valueAmount',
+            // 'valueAmount',
             'valueDate',
             'valueTime',
             'valueRecipient',
