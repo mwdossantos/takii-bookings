@@ -35,6 +35,7 @@ export default class SaveButton extends Component {
         const fields = [
             'valueCompany',
             'valueDate',
+            'valueTime',
             'valueRecipient',
             'valueLocation'
         ];
@@ -53,6 +54,7 @@ export default class SaveButton extends Component {
                 {
                     company: store.state['valueCompany'],
                     date: store.state['valueDate'],
+                    time: store.state['valueTime'],
                     recipient: store.state['valueRecipient'],
                     location: store.state['valueLocation'],
                 },
