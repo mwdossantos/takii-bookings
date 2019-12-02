@@ -38,7 +38,7 @@ app.use('/getBookings', gbr)
 // Public declaration
 app.use(express.static('public'));
 
-const PORT = 3000
+const PORT = 69
 // connect to DB by using promises
 app.listen(PORT, () => {
     console.log('Listening to port ' + PORT + ': View your app here: http://localhost:5000/');
