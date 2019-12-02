@@ -49,6 +49,7 @@ export default class GetButton extends Component {
                 <li class="list-group-item company"><h5 class="label">Company:</h5>${booking.company}</li>
                 <li class="list-group-item recipient"><h5 class="label">Recipient:</h5>${booking.recipient}</li>
                 <li class="list-group-item date"><h5 class="label">Date:</h5>${booking.date}</li>
+                <li class="list-group-item date"><h5 class="label">Time:</h5>${booking.time}</li>
                 <li class="list-group-item location"><h5 class="label">Location</h5>${booking.location}</li>
             </ul>`;
             document.querySelector('#data').appendChild(bookingCard);
