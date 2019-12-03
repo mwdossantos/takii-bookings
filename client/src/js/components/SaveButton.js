@@ -43,12 +43,16 @@ export default class SaveButton extends Component {
         ];
 
         let allgood = true;
-
+        let alertIt = false;
         fields.forEach(field => {
             if (store.state[field].length == 0)
                 allgood = false;
+            alertIt = true;
         });
-
+        if (alertIt == true) {
+            alert('something went wrong, use a keypress on all fields. if this doesnt work send a mail to tbl@takii.eu');
+            alertIt = false;
+        }
         if (allgood) {
             store.state['saveState'] = "saving";
             new WebRequest(

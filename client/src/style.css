@@ -8,7 +8,8 @@
     background-color: transparent!important;
 }
 
-.js-preview {
+#preview {
+    display: none;
 }
 
 nav {
@@ -20,7 +21,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-body {
+body {  
     background-color: #f1f1f1;
 }
 

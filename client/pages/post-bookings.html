@@ -108,12 +108,7 @@
                         aria-describedby="inputGroup-sizing-default">
                     <input type="time" class="form-control js-inputTime" aria-label="idk">
                 </div>
-                <script>
-                    var today = new Date;
-                    console.log(today);
-                    const dateShit = document.querySelector(".js-inputDate");
-                    dateShit.setAttribute("min", today); 
-                </script>
+
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-sizing-default">Room</span>
@@ -127,10 +122,15 @@
                         <option value="helianthus"></option>
                     </datalist>
                 </div>
+                <div class="input-group mt-2">
+                    <div class="input-group-prepend">
+                        <button type="button" class="btn form-control btn-warning js-saveButton">Save</button>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="card js-preview">
+        <div class="card js-preview" id="preview">
             <img src="http://1.bp.blogspot.com/-7XiSNsI7Zhc/XL3HYJjFmDI/AAAAAAACt9E/Yzd_cNd6h7IBQcnL4H8R7hHOQXXM_qX6QCK4BGAYYCw/s1600/girassol.gif"
                 class="card-img-top">
             <div class="card-body">
@@ -151,6 +151,12 @@
             </div>
         </div>
     </div>
+    <script>
+        var today = new Date;
+        console.log(today);
+        const dateShit = document.querySelector(".js-inputDate");
+        dateShit.setAttribute("min", today); 
+    </script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="../dist/bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
