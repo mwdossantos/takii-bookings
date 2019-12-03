@@ -56,7 +56,7 @@ export default class SaveButton extends Component {
         if (allgood) {
             store.state['saveState'] = "saving";
             new WebRequest(
-                'http://rushtothemax.gq:5000/createBookings',
+                'http://localhost:5000/createBookings',
                 {
                     company: store.state['valueCompany'],
                     name: store.state['valueName'],
